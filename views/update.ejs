@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Update Teacher</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+</head>
+<body>
+    <section class="content-header">
+        <h1>Teacher</h1>
+    </section>
+
+    <div class="content">
+
+          <div class="container-fluid">
+
+              <% teachers.forEach(function(result) { %>     
+                <form action="/teacher/update?id=<%= result.id_teacher %>" method="post">
+                    <div class="col-sm-12">
+                        <div class="col-sm-3">
+                            <input type="text" name="name" value="<%= result.name_teacher %>"  placeholder ="enter name teacher" class="form-control " >
+                        </div>
+                        <div class="col-sm-9"> </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="col-md-3">
+                            <input type="text" name="subject" value="<%= result.subject_teacher %>" placeholder ="enter subject "class="form-control col-md-3">
+                          <!-- <input type="hidden" name="id" value=""> -->
+                        </div>
+                    </div>
+                <div class="col-sm-12">
+                <div class="col-md-3">
+                <input type="submit" class="form-control btn-success col-md-3" name="submit" value="Save">
+                </div>
+                </div>
+            </form>
+            <% });  %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
